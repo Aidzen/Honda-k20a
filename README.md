@@ -30,6 +30,7 @@
 | **Faculty** | Faculty of Computing and Informatics (FCI) |
 | **Course Code** | LDCW6123 |
 | **Project Name** | Honda K20A i-VTEC Educational Application |
+| **Group** | G6 |
 
 ---
 
