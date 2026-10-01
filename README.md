@@ -133,7 +133,7 @@ Calculated power: 137.34 kW
 | :--- | :--- | :--- |
 | **Zakariye** | System Logic & Power Calculator | [@Xach0-eng](https://github.com/Xach0-eng) |
 | **Aidan** | Core Menu & VTEC Documentation | [@Aidzen](https://github.com/Aidzen) |
-
+| **Afif** | Research Documentation & Program Testing | [nurafifnazreen](https://github.com/nurafifnazreen) |
 <br/>
 
 <sub>Built for Multimedia University (MMU) • Faculty of Computing and Informatics (FCI) • 2026</sub>
