@@ -1,58 +1,37 @@
-// Honda VTEC Learning and Power Calculator
-// Research references and limitations: RESEARCH.md and README.md.
-
-#include <cmath>
-#include <iomanip>
 #include <iostream>
-#include <sstream>
+#include <iomanip>
 #include <string>
+#include <limits>
 
-// Read a complete line: reject trailing text, fractions for integer choices,
-// non-finite numbers, and values outside the permitted range. EOF exits cleanly.
+using namespace std;
+
+// Helper function template to read numbers safely with input validation
 template <typename T>
-bool readNumber(const std::string& prompt, T minimum, T maximum, T& value) {
-    std::string line;
+bool readNumber(const string& prompt, T minVal, T maxVal, T& outVal) {
     while (true) {
-        std::cout << prompt;
-        if (!std::getline(std::cin, line)) return false;
-        std::istringstream input(line);
-        T candidate{};
-        if (input >> candidate) {
-            input >> std::ws;
-            if (input.eof() && std::isfinite(static_cast<double>(candidate)) &&
-                candidate >= minimum && candidate <= maximum) {
-                value = candidate;
+        cout << prompt;
+        if (cin >> outVal) {
+            if (outVal >= minVal && outVal <= maxVal) {
                 return true;
             }
+            cout << "Invalid input. Please enter a value between " << minVal << " and " << maxVal << ".\n";
+        } else {
+            if (cin.eof()) return false;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid entry. Please enter a valid number.\n";
         }
-        std::cout << "Invalid input. Enter a number from " << minimum
-                  << " to " << maximum << " only.\n";
     }
 }
 
+// Displays overview of VTEC and i-VTEC technology
 void showTechnology() {
-    std::cout << "\n--- UNDERSTANDING VTEC / i-VTEC ---\n"
-        << "VTEC means Variable Valve Timing and Lift Electronic Control.\n"
-        << "The early DOHC system switches cam profiles to balance everyday\n"
-        << "low/mid-speed operation with high-speed breathing. [S2]\n"
-        << "The 2000 DOHC i-VTEC design combines VTEC with VTC, which\n"
-        << "continuously adjusts intake cam timing to suit engine load. [S3]\n"
-        << "Implementations differ between engines. This program does not\n"
-        << "simulate the ECU or predict a VTEC engagement RPM.\n";
+    cout << "\n--- HONDA VTEC & i-VTEC TECHNOLOGY ---\n"
+            "VTEC (Variable Valve Timing and Lift Electronic Control) alters\n"
+            "valve lift and duration to optimize efficiency and performance.\n"
+            "i-VTEC combines VTEC with VTC (Variable Timing Control) for continuous\n"
+            "intake camshaft phasing, improving torque response across all RPMs. [S1]\n";
 }
-
-void showTimeline() {
-    std::cout << "\n--- development timeline ---\n"
-        << "1984: honda starts its new concept engine programme. [s1]\n"
-        << "1986: vtec production development project approved. [s1]\n"
-        << "1989: b16a vtec introduced in the integra. [s2]\n"
-        << "2000: dohc i-vtec debuts in the honda stream. [s3]\n"
-        << "2001: new cr-v adopts 2.0-litre dohc i-vtec. [s4]\n"
-        << "2007: fd2 civic type r uses the naturally aspirated k20a. [s5]\n";
-
-        .....
-        
-     using namespace std;
 
 // Displays the historical milestones of VTEC development
 void showTimeline() {
@@ -113,7 +92,7 @@ int main() {
                 "0. Exit\n";
 
         if (!readNumber("Choose an option (0-5): ", 0, 5, choice)) {
-            break; 
+            break;
         }
 
         switch (choice) {
