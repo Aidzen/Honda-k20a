@@ -4,23 +4,32 @@
 ### *High-Performance C++ Engine Dynamics & Shaft Power Engine*
 
 ![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=githubactions)
-![License](https://img.shields.io/badge/License-Academic-red?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey?style=for-the-badge)
+![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Academic-orange?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue?style=for-the-badge)
 
-_____                      ___    ___ _____ _____ _____ 
-  /  ___|                    | \ \  / /|_   _|  ___/  __ \
-  \ `--.  _ __   ___  ___ ___| |\ \/ /   | | | |__ | /  \/
-   `--. \| '_ \ / _ \/ __/ __| | \  /    | | |  __|| |    
-  /\__/ /| |_) |  __/ (_/\__ \ |  \/     | | | |___| \__/\
-  \____/ | .__/ \___|\___|___/_|  \/     \_/ \____/ \____/
-         | |                                              
-         |_|
+```text
+  ___ ___ ___ ___ ___   _   _ _____ ___ ___ 
+ / __| _ \ __| __|   \ | | | |_   _| __/ C  |
+ \__ \  _/ _|| _|| |) | \ \/ / | | | _| \__ |
+ |___/_| |___|___|___/   \__/  |_| |___|___/ 
+```
 
-
-         **[ Features ]** • **[ Architecture ]** • **[ Quick Start ]** • **[ Engine Curves ]**
+**Faculty of Computing and Informatics (FCI)**  
+**Multimedia University**
 
 </div>
+
+---
+
+## 🎓 Academic Project Information
+
+| Parameter | Details |
+| :--- | :--- |
+| **Institution** | Multimedia University (MMU) |
+| **Faculty** | Faculty of Computing and Informatics (FCI) |
+| **Course Code** | LDCW6123 |
+| **Project Name** | Honda K20A i-VTEC Educational Application |
 
 ---
 
@@ -46,15 +55,9 @@ Built with strict input validation and zero external library bloat, it calculate
 
 ## 📈 VTEC Lift & Torque Dynamics
 
-Torque (Nm)
-^
-220 |                       /------------------\  <-- High-Cam Profile (i-VTEC)
-200 |                      /
-
-180 |         /-----------/ <--- VTEC Crossover (~5800 RPM)
-160 |        /  Low-Cam Profile
-100 |/________________________________> Engine RPM
-0     2000     4000    5800    7000    8400 (Redline)
+<p align="center">
+  <img src="vtec_curve.svg" alt="Animated VTEC Telemetry" width="100%" />
+</p>
 
 ---
 
@@ -69,7 +72,7 @@ graph TD
     A --> F[showSources]
     
     C --> G[readNumber Validation]
-
+```
 
 ---
 
@@ -89,8 +92,49 @@ Where:
 ## 🚀 Quick Start & Build Pipeline
 
 ### Prerequisites
-Ensure you have a C++17 compliant compiler (`g++`, `clang`, or MSVC).
+Requires a C++17 compliant compiler (`g++`, `clang`, or MSVC).
 
 ### 1. Compile
 ```powershell
 g++ -std=c++17 Vtec.cpp -o HondaVTEC.exe
+```
+
+### 2. Execute
+```powershell
+.\HondaVTEC.exe
+```
+
+### 3. Example Terminal Interactive Session
+```text
+=== HONDA VTEC EDUCATIONAL CONSOLE ===
+1. Learn about VTEC / i-VTEC
+2. View development timeline
+3. View FD2 K20A specifications
+4. Calculate engine power
+5. View research sources
+0. Exit
+Choose an option (0-5): 4
+
+--- POWER CALCULATOR ---
+Enter torque in Nm (0-1000): 215
+Enter engine speed in RPM (0-10000): 6100
+
+Calculated power: 137.34 kW
+```
+
+---
+
+## 👥 Engineering Team & Collaboration
+
+<div align="center">
+
+| Developer | Role | GitHub |
+| :--- | :--- | :--- |
+| **Zakariye** | System Logic & Power Calculator | [@Xach0-eng](https://github.com/Xach0-eng) |
+| **Aidan** | Core Menu & VTEC Documentation | [@Aidzen](https://github.com/Aidzen) |
+
+<br/>
+
+<sub>Built for Multimedia University (MMU) • Faculty of Computing and Informatics (FCI) • 2026</sub>
+
+</div>
